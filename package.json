@@ -1,0 +1,19 @@
+{
+  "name": "pub-pkg-google-oauth",
+  "version": "0.5.0",
+  "description": "pub-server plugin for google oauth",
+  "main": "pub-config.js",
+  "dependencies": {
+    "pub-util": "^0.5.0",
+    "passport": "^0.2.1",
+    "passport-google-oauth": "^0.2.0"
+  },
+  "devDependencies": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jldec/pub-pkg-google-oauth.git"
+  },
+  "author": "jurgen leschner",
+  "license": "MIT"
+}

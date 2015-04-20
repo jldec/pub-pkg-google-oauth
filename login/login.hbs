@@ -1,0 +1,23 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>login</title>
+<link rel="stylesheet" href="/css/login.css">
+</head>
+<body>
+<div class="login">
+<form id="login-form" method="get" action="{{login-url}}">
+{{#if-authenticated}}
+<h2>{{user}}</h2>
+{{{fragmentHtml [#if-authenticated]}}}
+{{else}}
+{{{html}}}
+{{/if-authenticated}}
+</form>
+</div>
+<script src="/js/jquery-1.11.2.min.js"></script>
+{{{pub-ux}}}
+</body>
+</html>
