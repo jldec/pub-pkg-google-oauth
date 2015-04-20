@@ -15,7 +15,7 @@ module.exports = function(server) {
 
   var opts  = server.opts;
   var generator = server.generator;
-  
+
   opts.auth = opts.auth || {};
   opts.auth.google = opts.auth.google || {};
 
@@ -53,8 +53,8 @@ module.exports = function(server) {
         return process.nextTick(function() { cb(null, profile); });
       }
     ));
-    
-    // slightly hacky way to serve loginPage if not using default login URL 
+
+    // slightly hacky way to serve loginPage if not using default login URL
     if (loginPage !== '/server/login') {
       app.get(loginPage, function(req, res) {
         generator.req = req;

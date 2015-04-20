@@ -1,10 +1,27 @@
 body {
 font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-font-size: 20px;
-background-color:ccc;
+background-color:#fff;
 }
 
 .login {
-  margin: 1em auto;
-  max-width: 320px;
+text-align: center;
+color: #444;
+margin: 4em auto;
+width: 280px;
+padding:10px 40px;
+background-color:#eee;
+border-radius: 2px;
+box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.login input[type="submit"] {
+font-size: 1em;
+width: 100%;
+display: block;
+border: 1px solid #555;
+color: #FFF;
+background-color: #777;
+font-weight: 700;
+border-radius: 3px;
+height: 36px;
 }

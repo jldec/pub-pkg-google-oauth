@@ -37,17 +37,21 @@ export APP=https://{yourname}.localtunnel.me
 ```
 
 ### oauth configuration on google
+
 - use the [google developers console](https://console.developers.google.com/) and create project if you don't already have one
-- under `APIs and auth` / `APIs`, make sure that the `Google+ API` is enabled
-- under `APIs and auth` / `Credentials`, note or create your Client ID
-- `Edit Settings` to access the form to set Javascript Origins and Redirect URIs
-- configure a `Redirect URI` to `{your app url}/server/auth/google/callback`
-- configure a `Javascript origin` to match your app URL
-- if you like, you can also customize the consent screen under `APIs and auth` / `Consent screen`
+
+- make sure that the `Google+ API` is enabled
+  ![](gdc-enabled-apis.png)
+- under `Credentials`, create a new Client ID (type Web Application)
+- enter a project name in the consent screen
+- set the `Javascript origin` to match your app URL
+- set the `Redirect URI` to `{your app url}/server/auth/google/callback`
+  ![](gdc-new-client-id.png)
+- note the new Client ID and Client secret
 
 
 ### configuring google email addressses to access pub-server
-ACLs are configured using environment variables `ACL_ADMIN`, `ACL_EDIT`, and `ACL_READ`. 
+ACLs are configured using environment variables `ACL_ADMIN`, `ACL_EDIT`, and `ACL_READ`.
 These contain comma-separated lists of users.
 
 E.g. To grant yourself admin rights, and 3 other users read access:
@@ -69,9 +73,20 @@ $ pub -t google-oauth
 ```
 
 - now point your browser to https://{yourname}.localtunnel.me
+- when running with auth, the default behavior is to require authentication for all pages
+
+- you should see a login prompt
+  ![](login.png)
+
+- this will be followed by the google oauth confirmation
+  ![](google-oauth-confirm.png)
+
+- if all is well you will then be able to read the markdown page in the directory where `pub` was launched.
+- if you have not configured the access properly for this email you will see another login prompt
+  ![](login-again.png)
 
 
-### credits
+# credits
 - the heavy lifting in this package is done by
   [passport](http://passportjs.org/) and
   [passport-google-oauth](https://github.com/jaredhanson/passport-google-oauth)
