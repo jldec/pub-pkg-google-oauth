@@ -1,6 +1,6 @@
 {
   "name": "pub-pkg-google-oauth",
-  "version": "0.5.3",
+  "version": "1.0.0",
   "description": "pub-server plugin for google oauth",
   "main": "pub-config.js",
   "dependencies": {
