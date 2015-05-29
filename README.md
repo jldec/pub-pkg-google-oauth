@@ -4,7 +4,7 @@
 This package is included with pub-server. It can be activated by including it as a theme on the command line or in `pub-config`.
 
 ```sh
-pub -t google-oauth
+pub -t pub-pkg-google-oauth
 ```
 
 ### credentials
@@ -69,7 +69,7 @@ You can also open public/anonymous access to non-protected pages by running `pub
 - start pub-server with google oauth
 
 ```sh
-$ pub -t google-oauth
+$ pub -t pub-pkg-google-oauth
 ```
 
 - now point your browser to https://{yourname}.localtunnel.me
