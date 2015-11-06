@@ -1,15 +1,14 @@
 {
   "name": "pub-pkg-google-oauth",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "pub-server plugin for google oauth",
   "main": "pub-config.js",
   "dependencies": {
-    "pub-util": "^2.1.0",
-    "passport": "^0.2.1",
-    "passport-google-oauth": "^0.2.0"
+    "passport": "^0.3.0",
+    "passport-google-oauth": "^0.2.0",
+    "pub-util": "^2.1.1"
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git://github.com/jldec/pub-pkg-google-oauth.git"
