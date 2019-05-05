@@ -22,7 +22,8 @@ a site to authenticate with oauth unless the site has been registered as a "java
 If you are using heroku, you can use your heroku app URL for this.
 
 If you are running on your own machine over a local area network (or on wifi), you will need to configure a
-tunnel service like [localtunnel.me](http://localtunnel.me/) so that your server can be reached from the Internet.
+tunnel service like [localtunnel](https://localtunnel.github.io/www/) or [ngrok](https://ngrok.com/) so that
+your server can be reached from the Internet.
 
 ```sh
 npm install -g localtunnel
@@ -39,11 +40,7 @@ export APP=https://{yourname}.localtunnel.me
 ### oauth configuration on google
 
 - use the [google developers console](https://console.developers.google.com/) and create project if you don't already have one
-
-- make sure that the `Google+ API` is enabled
-  ![](gdc-enabled-apis.png)
 - under `Credentials`, create a new Client ID (type Web Application)
-- enter a project name in the consent screen
 - set the `Javascript origin` to match your app URL
 - set the `Redirect URI` to `{your app url}/server/auth/google/callback`
   ![](gdc-new-client-id.png)
@@ -88,5 +85,5 @@ $ pub -t pub-pkg-google-oauth
 
 # credits
 - the heavy lifting in this package is done by
-  [passport](http://passportjs.org/) and
+  [passport](https://github.com/jaredhanson/passport) and
   [passport-google-oauth](https://github.com/jaredhanson/passport-google-oauth)

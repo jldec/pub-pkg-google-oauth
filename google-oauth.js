@@ -8,7 +8,7 @@
  * - url for loginPage is /server/login or in opts.auth.loginPage
  * - after login, redirect back to url in req.session.originalUrl
  *
- * copyright 2015, Jurgen Leschner - github.com/jldec - MIT license
+ * copyright 2015-2019, Jurgen Leschner - github.com/jldec - MIT license
  */
 
 module.exports = function(server) {
@@ -24,7 +24,7 @@ module.exports = function(server) {
   var callbackPath = opts.auth.google.callbackPath || '/server/auth/google/callback';
   var redirectPath = opts.auth.google.redirectPath || '/server/auth/google/login';
 
-  var passport = require('passport')
+  var passport = require('passport');
   var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 
   if (!process.env.GID || !process.env.GCS){
@@ -46,9 +46,9 @@ module.exports = function(server) {
     });
 
     passport.use(new GoogleStrategy(
-    { clientID: process.env.GID,
-      clientSecret: process.env.GCS,
-      callbackURL: server.opts.appUrl + callbackPath }, // breaks on localhost
+      { clientID: process.env.GID,
+        clientSecret: process.env.GCS,
+        callbackURL: server.opts.appUrl + callbackPath }, // breaks on localhost
       function(accessToken, refreshToken, profile, cb) {
         return process.nextTick(function() { cb(null, profile); });
       }
@@ -64,10 +64,6 @@ module.exports = function(server) {
 
     app.get(redirectPath,
       passport.authenticate('google', {
-        // scope used to be https://www.googleapis.com/auth/userinfo.email
-        // before v0.2.x
-        // see https://github.com/jaredhanson/passport-google-oauth/issues/72
-        // also need to enable the Google+ API in the google dev console
         scope: ['email']
       })
     );
@@ -90,4 +86,4 @@ module.exports = function(server) {
 
   });
 
-}
+};
