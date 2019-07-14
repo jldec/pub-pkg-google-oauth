@@ -1,15 +1,15 @@
 {
   "name": "pub-pkg-google-oauth",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "pub-server plugin for google oauth",
   "main": "pub-config.js",
   "dependencies": {
     "passport": "^0.4.0",
     "passport-google-oauth": "^2.0.0",
-    "pub-util": "^3.0.7"
+    "pub-util": "^3.0.8"
   },
   "devDependencies": {
-    "eslint": "^5.16.0"
+    "eslint": "^6.0.1"
   },
   "files": [
     "login/",
