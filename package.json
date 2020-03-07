@@ -1,15 +1,15 @@
 {
   "name": "pub-pkg-google-oauth",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "pub-server plugin for google oauth",
   "main": "pub-config.js",
   "dependencies": {
-    "passport": "^0.4.0",
+    "passport": "^0.4.1",
     "passport-google-oauth": "^2.0.0",
-    "pub-util": "^3.0.8"
+    "pub-util": "^3.0.9"
   },
   "devDependencies": {
-    "eslint": "^6.0.1"
+    "eslint": "^6.8.0"
   },
   "files": [
     "login/",
@@ -18,12 +18,12 @@
     "pub-config.js"
   ],
   "scripts": {
-    "lint": "eslint ."
+    "test": "eslint . && tape test/*.js"
   },
   "repository": {
     "type": "git",
     "url": "git://github.com/jldec/pub-pkg-google-oauth.git"
   },
-  "author": "jurgen leschner",
+  "author": "Jürgen Leschner",
   "license": "MIT"
 }
