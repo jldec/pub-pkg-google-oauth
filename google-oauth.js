@@ -27,11 +27,17 @@ module.exports = function(server) {
   var passport = require('passport');
   var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 
-  if (!process.env.GID || !process.env.GCS){
-    throw new Error('missing credentials for pub-pkg-google-oauth');
-  }
-
   server.on('init-app-first', function() {
+
+    if (process.env.DISABLE_AUTH) {
+      opts.log('pub-pkg-google-oauth authentication disabled');
+      opts.auth.disabled = true;
+      return;
+    }
+
+    if (!process.env.GID || !process.env.GCS){
+      throw new Error('missing credentials for pub-pkg-google-oauth');
+    }
 
     var app = server.app;
     app.use(passport.initialize());

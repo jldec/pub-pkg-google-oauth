@@ -82,6 +82,9 @@ $ pub -t pub-pkg-google-oauth
 - if you have not configured the access properly for this email you will see another login prompt
   ![](login-again.png)
 
+### to disable auth even when this module is included
+
+Set environment variable DISABLE_AUTH to run pub-server without authentication when this package is included.
 
 # credits
 - the heavy lifting in this package is done by
