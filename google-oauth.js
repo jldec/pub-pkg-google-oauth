@@ -8,7 +8,7 @@
  * - url for loginPage is /server/login or in opts.auth.loginPage
  * - after login, redirect back to url in req.session.originalUrl
  *
- * Copyright (c) 2015-2022 Jürgen Leschner - github.com/jldec - MIT license
+ * Copyright (c) 2015-2024 Jürgen Leschner - github.com/jldec - MIT license
  */
 
 module.exports = function(server) {
